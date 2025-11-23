@@ -1,3 +1,7 @@
+![circuit-setup-1.png](assets/circuit-setup-1.png)
+![circuit-setup-2.png](assets/circuit-setup-2.png)
+![terminal-output.png](assets/terminal-output.png)
+
 # ESP32 Emulation with QEMU
 
 This document outlines the process of setting up an ESP32 emulation environment using QEMU and demonstrating two applications, as per the OSHW Screening Task.

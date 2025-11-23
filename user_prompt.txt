@@ -1,0 +1,8 @@
+I have found the following images in the `assets` folder:
+- `circuit-setup-1.png`
+- `circuit-setup-2.png`
+- `terminal-output.png`
+
+Please provide the context for each of these images so I can add them to the `README.md` file. For example:
+- "This image shows the circuit diagram for the blink example."
+- "This image shows the terminal output when running the temperature sensor simulation."
