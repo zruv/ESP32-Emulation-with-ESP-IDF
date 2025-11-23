@@ -103,3 +103,7 @@ The process would involve:
 5.  Comparing the output against a set of expected results to determine the correctness of the submission.
 
 This automated evaluation platform would significantly streamline the process of grading and providing feedback for embedded systems courses.
+
+## 6. Generated Report (report.md)
+
+A `report.md` file has been generated based on the OSHW Screening Task requirements. This report summarizes the setup, challenges, and reflection for the task. Per specific instruction, QEMU-related details (e.g., version information, specific QEMU build steps) were intentionally omitted from this generated report, focusing instead on the broader ESP-IDF setup and conceptual aspects of the emulation task.
