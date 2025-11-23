@@ -1,0 +1,2 @@
+source /home/zeus/esp/blink/build/bootloader/gdbinit/symbols
+source /home/zeus/esp/blink/build/bootloader/gdbinit/connect

@@ -1,0 +1,91 @@
+Command: ninja flash
+[0/1] Re-running CMake...
+-- Component directory /home/zeus/esp/esp-idf/components/mqtt does not contain a CMakeLists.txt file. No component will be added
+-- Minimal build - ON
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+NOTICE: Processing 2 dependencies:
+NOTICE: [1/2] espressif/led_strip (3.0.2)
+NOTICE: [2/2] idf (6.1.0)
+-- ESP-TEE is currently supported only on the esp32c6;esp32h2;esp32c5;esp32c61 SoCs
+-- Project sdkconfig file /home/zeus/esp/blink/sdkconfig
+Loading defaults file /home/zeus/esp/blink/sdkconfig.defaults...
+Loading defaults file /home/zeus/esp/blink/sdkconfig.defaults.esp32...
+-- Compiler supported targets: xtensa-esp-elf
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- App "blink" version: 1
+-- USING O3
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_system/ld/esp32/memory.ld.in
+--   -> Preprocessing .in script: /home/zeus/esp/esp-idf/components/esp_system/ld/esp32/memory.ld.in
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+--   -> Preprocessing .in script: /home/zeus/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+--   -> Applying ldgen processing: /home/zeus/esp/blink/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script /home/zeus/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_blockdev esp_bootloader_format esp_common esp_driver_bitscrambler esp_driver_gpio esp_driver_rmt esp_driver_spi esp_hal_dma esp_hal_emac esp_hal_i2c esp_hal_i2s esp_hal_jpeg esp_hal_lcd esp_hal_mcpwm esp_hal_mspi esp_hal_pcnt esp_hal_timg esp_hal_usb esp_hal_wdt esp_hw_support esp_libc esp_mm esp_partition esp_pm esp_rom esp_security esp_stdio esp_system esp_timer esp_usb_cdc_rom_console espressif__led_strip esptool_py freertos hal heap log main mbedtls partition_table pthread soc spi_flash xtensa
+-- Component paths: /home/zeus/esp/esp-idf/components/app_update /home/zeus/esp/esp-idf/components/bootloader /home/zeus/esp/esp-idf/components/bootloader_support /home/zeus/esp/esp-idf/components/cxx /home/zeus/esp/esp-idf/components/efuse /home/zeus/esp/esp-idf/components/esp_app_format /home/zeus/esp/esp-idf/components/esp_blockdev /home/zeus/esp/esp-idf/components/esp_bootloader_format /home/zeus/esp/esp-idf/components/esp_common /home/zeus/esp/esp-idf/components/esp_driver_bitscrambler /home/zeus/esp/esp-idf/components/esp_driver_gpio /home/zeus/esp/esp-idf/components/esp_driver_rmt /home/zeus/esp/esp-idf/components/esp_driver_spi /home/zeus/esp/esp-idf/components/esp_hal_dma /home/zeus/esp/esp-idf/components/esp_hal_emac /home/zeus/esp/esp-idf/components/esp_hal_i2c /home/zeus/esp/esp-idf/components/esp_hal_i2s /home/zeus/esp/esp-idf/components/esp_hal_jpeg /home/zeus/esp/esp-idf/components/esp_hal_lcd /home/zeus/esp/esp-idf/components/esp_hal_mcpwm /home/zeus/esp/esp-idf/components/esp_hal_mspi /home/zeus/esp/esp-idf/components/esp_hal_pcnt /home/zeus/esp/esp-idf/components/esp_hal_timg /home/zeus/esp/esp-idf/components/esp_hal_usb /home/zeus/esp/esp-idf/components/esp_hal_wdt /home/zeus/esp/esp-idf/components/esp_hw_support /home/zeus/esp/esp-idf/components/esp_libc /home/zeus/esp/esp-idf/components/esp_mm /home/zeus/esp/esp-idf/components/esp_partition /home/zeus/esp/esp-idf/components/esp_pm /home/zeus/esp/esp-idf/components/esp_rom /home/zeus/esp/esp-idf/components/esp_security /home/zeus/esp/esp-idf/components/esp_stdio /home/zeus/esp/esp-idf/components/esp_system /home/zeus/esp/esp-idf/components/esp_timer /home/zeus/esp/esp-idf/components/esp_usb_cdc_rom_console /home/zeus/esp/blink/managed_components/espressif__led_strip /home/zeus/esp/esp-idf/components/esptool_py /home/zeus/esp/esp-idf/components/freertos /home/zeus/esp/esp-idf/components/hal /home/zeus/esp/esp-idf/components/heap /home/zeus/esp/esp-idf/components/log /home/zeus/esp/blink/main /home/zeus/esp/esp-idf/components/mbedtls /home/zeus/esp/esp-idf/components/partition_table /home/zeus/esp/esp-idf/components/pthread /home/zeus/esp/esp-idf/components/soc /home/zeus/esp/esp-idf/components/spi_flash /home/zeus/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zeus/esp/blink/build
+[1/11] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/temperature_sensor.c.obj
+[2/11] Performing build step for 'bootloader'
+[1/1] cd /home/zeus/esp/blink/build/bootloader && /home/zeus/required_idf_tools_path/python_env/idf6.1_py3.10_env/bin/python /home/zeus/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/zeus/esp/blink/build/bootloader/bootloader.bin
+Bootloader binary size 0x66b0 bytes. 0x950 bytes (8%) free.
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+[4/9] Linking C static library esp-idf/main/libmain.a
+[5/9] Generating esp-idf/esp_system/ld/sections.ld
+[6/9] Linking CXX executable blink.elf
+[7/9] Generating binary image from built executable
+esptool v5.1.0
+Creating ESP32 image...
+Merged 2 ELF sections.
+Successfully created ESP32 image.
+Generated /home/zeus/esp/blink/build/blink.bin
+[8/9] cd /home/zeus/esp/blink/build && /home/zeus/required_idf_tools_path/python_env/idf6.1_py3.10_env/bin/python /home/zeus/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/zeus/esp/blink/build/partition_table/partition-table.bin /home/zeus/esp/blink/build/blink.bin
+blink.bin binary size 0x22ab0 bytes. Smallest app partition is 0x100000 bytes. 0xdd550 bytes (86%) free.
+[8/9] Running utility command for flash
+esptool --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default-reset --after=hard-reset write-flash --flash-mode dio --flash-freq 40m --flash-size 2MB 0x1000 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 blink.bin
+esptool v5.1.0
+Serial port /dev/ttyUSB0:
+Connecting...........
+[1A[2K[1A[2KConnected to ESP32 on /dev/ttyUSB0:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                f0:24:f9:0e:76:48
+
+Uploading stub flasher...
+Running stub flasher...
+[1A[2K[1A[2KStub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x00010000 to 0x00032fff...
+SHA digest in image updated.
+Compressed 26288 bytes to 16625...
+[KWriting at 0x00001000 [                              ]   0.0% 0/16625 bytes... [KWriting at 0x00007574 [============================> ]  98.6% 16384/16625 bytes... [KWriting at 0x000076b0 [==============================] 100.0% 16625/16625 bytes... 
+[1A[2K[1A[2KWrote 26288 bytes (16625 compressed) at 0x00001000 in 0.8 seconds (271.5 kbit/s).
+Hash of data verified.
+Compressed 3072 bytes to 103...
+[KWriting at 0x00008000 [                              ]   0.0% 0/103 bytes... [KWriting at 0x00008c00 [==============================] 100.0% 103/103 bytes... 
+[1A[2K[1A[2KWrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (532.5 kbit/s).
+Hash of data verified.
+Compressed 142000 bytes to 80648...
+[KWriting at 0x00010000 [                              ]   0.0% 0/80648 bytes... [KWriting at 0x0001b24e [=====>                        ]  20.3% 16384/80648 bytes... [KWriting at 0x00021347 [===========>                  ]  40.6% 32768/80648 bytes... [KWriting at 0x00026afe [=================>            ]  60.9% 49152/80648 bytes... [KWriting at 0x0002d040 [=======================>      ]  81.3% 65536/80648 bytes... [KWriting at 0x00032ab0 [==============================] 100.0% 80648/80648 bytes... 
+[1A[2K[1A[2KWrote 142000 bytes (80648 compressed) at 0x00010000 in 2.2 seconds (518.9 kbit/s).
+Hash of data verified.
+
+Hard resetting via RTS pin...

@@ -1,0 +1,2 @@
+source /home/zeus/esp/blink/build/gdbinit/symbols
+source /home/zeus/esp/blink/build/gdbinit/connect
