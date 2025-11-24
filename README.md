@@ -2,15 +2,11 @@
 ![circuit-setup-2.png](assets/circuit-setup-2.png)
 ![terminal-output.png](assets/terminal-output.png)
 
-# ESP32 Emulation with QEMU
+# ESP32 Emulation with QEMU & ESP-IDF
 
 This document outlines the process of setting up an ESP32 emulation environment using QEMU and demonstrating two applications, as per the OSHW Screening Task.
 
-## 1. System Information
-
 *   **Operating System**: Linux
-*   **QEMU Version**: (Please fill in your QEMU version)
-*   **ESP-IDF Version**: (Please fill in your ESP-IDF version)
 
 ## 2. Setup Steps
 
@@ -79,18 +75,6 @@ It is assumed that you have already cloned the project repository.
     *   **Challenge**: The build failed due to a duplicate `app_main` function definition. Both `temperature_sensor.c` and `app_main.c` (originally `blink_example_main.c`) had this function.
     *   **Fix**: The `main/CMakeLists.txt` file was modified to only include one of the main files at a time, allowing the user to switch between the two applications.
 
-## 4. Demonstration Screenshots
-
-(Please include screenshots of both applications running in QEMU)
-
-### a. Temperature Sensor Simulation
-
-(Screenshot of the temperature sensor output)
-
-### b. Blink and DHT Sensor Application
-
-(Screenshot of the blink and DHT sensor output)
-
 ## 5. Reflection
 
 This setup provides a powerful environment for developing and testing ESP32 applications without the need for physical hardware. By using QEMU, we can automate the testing of student code submissions on a platform like Yaksh.
@@ -103,7 +87,3 @@ The process would involve:
 5.  Comparing the output against a set of expected results to determine the correctness of the submission.
 
 This automated evaluation platform would significantly streamline the process of grading and providing feedback for embedded systems courses.
-
-## 6. Generated Report (report.md)
-
-A `report.md` file has been generated based on the OSHW Screening Task requirements. This report summarizes the setup, challenges, and reflection for the task. Per specific instruction, QEMU-related details (e.g., version information, specific QEMU build steps) were intentionally omitted from this generated report, focusing instead on the broader ESP-IDF setup and conceptual aspects of the emulation task.
