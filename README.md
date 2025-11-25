@@ -9,8 +9,8 @@
   <h1 align="center">ESP32 Emulation with QEMU & ESP-IDF</h1>
   <p align="center">
     A project demonstrating a complete ESP32 emulation environment from scratch using QEMU and the ESP-IDF.
+</div>
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 This project demonstrates how to set up a complete ESP32 emulation environment from scratch using QEMU and the ESP-IDF. It includes two example applications: a simulated temperature sensor and an application using virtual environment of QEMU.
