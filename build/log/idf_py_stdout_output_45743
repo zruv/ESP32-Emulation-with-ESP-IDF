@@ -1,0 +1,90 @@
+Command: /home/zeus/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/zeus/esp/esp-idf/tools/idf_monitor.py -p socket://localhost:5555 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/zeus/esp/blink/build/blink.elf /home/zeus/esp/blink/build/bootloader/bootloader.elf -m '/home/zeus/.espressif/python_env/idf6.1_py3.10_env/bin/python' '/home/zeus/esp/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0040,len:6376
+load:0x40078000,len:15900
+ho 0 tail 12 room 4
+load:0x40080400,len:3920
+entry 0x40080644
+[0;32mI (684) boot: ESP-IDF v6.1-dev-724-ga6e7046c30 2nd stage bootloader[0m
+[0;32mI (685) boot: compile time Nov 26 2025 02:14:23[0m
+[0;32mI (685) boot: Multicore bootloader[0m
+[0;32mI (727) boot: chip revision: v3.0[0m
+[0;32mI (730) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (730) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (730) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (737) boot: Enabling RNG early entropy source...[0m
+[0;32mI (746) boot: Partition Table:[0m
+[0;32mI (746) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (746) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (747) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (747) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (752) boot: End of partition table[0m
+[0;32mI (792) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=077c4h ( 30660) map[0m
+[0;32mI (813) esp_image: segment 1: paddr=000177ec vaddr=3ffb0000 size=02430h (  9264) load[0m
+[0;32mI (831) esp_image: segment 2: paddr=00019c24 vaddr=40080000 size=063f4h ( 25588) load[0m
+[0;32mI (850) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=0e0b0h ( 57520) map[0m
+[0;32mI (872) esp_image: segment 4: paddr=0002e0d8 vaddr=400863f4 size=0497ch ( 18812) load[0m
+[0;32mI (889) esp_image: segment 5: paddr=00032a5c vaddr=50000000 size=00028h (    40) load[0m
+[0;32mI (948) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (948) boot: Disabling RNG early entropy source...[0m
+[0;32mI (965) cpu_start: Multicore app[0m
+[0;32mI (1624) cpu_start: GPIO 3 and 1 are used as console UART I/O pins[0m
+[0;32mI (1628) cpu_start: Pro cpu start user code[0m
+[0;32mI (1628) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1628) app_init: Application information:[0m
+[0;32mI (1628) app_init: Project name:     blink[0m
+[0;32mI (1628) app_init: App version:      bd0a7a5-dirty[0m
+[0;32mI (1628) app_init: Compile time:     Nov 26 2025 02:29:27[0m
+[0;32mI (1628) app_init: ELF file SHA256:  e9397a96d...[0m
+[0;32mI (1629) app_init: ESP-IDF:          v6.1-dev-724-ga6e7046c30[0m
+[0;32mI (1629) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1629) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (1629) efuse_init: Chip rev:         v3.0[0m
+[0;32mI (1630) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1631) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (1631) heap_init: At 3FFB2C90 len 0002D370 (180 KiB): DRAM[0m
+[0;32mI (1631) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (1632) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (1632) heap_init: At 4008AD70 len 00015290 (84 KiB): IRAM[0m
+[0;32mI (1673) spi_flash: detected chip: winbond[0m
+[0;32mI (1678) spi_flash: flash io: dio[0m
+[0;32mI (1693) main_task: Started on CPU0[0m
+[0;32mI (1703) main_task: Calling app_main()[0m
+[0;32mI (1703) example: Example configured to blink GPIO LED![0m
+[0;32mI (1703) example: Buzzer beep on startup[0m
+[1;31mE (1823) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (1823) example: Could not read data from sensor[0m
+[0;32mI (1823) example: Turning the LED OFF![0m
+[0;32mI (2823) example: Turning the LED ON![0m
+[1;31mE (3833) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (3833) example: Could not read data from sensor[0m
+[0;32mI (3833) example: Turning the LED OFF![0m
+[0;32mI (4833) example: Turning the LED ON![0m
+[1;31mE (5843) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (5843) example: Could not read data from sensor[0m
+[0;32mI (5843) example: Turning the LED OFF![0m
+[0;32mI (6843) example: Turning the LED ON![0m
+[1;31mE (7853) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (7853) example: Could not read data from sensor[0m
+[0;32mI (7853) example: Turning the LED OFF![0m
+[0;32mI (8853) example: Turning the LED ON![0m
+[1;31mE (9863) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (9863) example: Could not read data from sensor[0m
+[0;32mI (9863) example: Turning the LED OFF![0m
+[0;32mI (10863) example: Turning the LED ON![0m
+[1;31mE (11873) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (11873) example: Could not read data from sensor[0m
+[0;32mI (11873) example: Turning the LED OFF![0m
+[0;32mI (12873) example: Turning the LED ON![0m
+[1;31mE (13883) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (13883) example: Could not read data from sensor[0m
+[0;32mI (13883) example: Turning the LED OFF![0m
+[0;32mI (14883) example: Turning the LED ON![0m
+[1;31mE (15893) DHT_DRIVER: Data corrupted or sensor not responding, checksum error or too few bits: 0[0m
+[1;31mE (15893) example: Could not read data from sensor[0m
+[0;32mI (15893) example: Turning the LED OFF![0m

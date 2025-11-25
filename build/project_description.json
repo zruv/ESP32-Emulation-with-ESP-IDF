@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "blink",
-    "project_version":    "74ab4aa-dirty",
+    "project_version":    "bd0a7a5-dirty",
     "project_path":       "/home/zeus/esp/blink",
     "idf_path":           "/home/zeus/esp/esp-idf",
     "build_dir":          "/home/zeus/esp/blink/build",
@@ -670,7 +670,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__led_strip" ],
             "file": "/home/zeus/esp/blink/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/zeus/esp/blink/main/temperature_sensor.c" ],
+            "sources": [ "/home/zeus/esp/blink/main/app_main.c", "/home/zeus/esp/blink/main/dht_driver.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
