@@ -20,7 +20,6 @@ The primary goal of this project is to create a virtual testing environment for 
 
 *   [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
 *   [QEMU](https://www.qemu.org/)
-*   [C](https://en.wikipedia.org/wiki/C_(programming_language))
 *   [CMake](https://cmake.org/)
 *   [Espressif-Qemu](https://github.com/espressif/qemu)
 
