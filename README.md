@@ -1,134 +1,185 @@
+<div align="center">
+  <img src="assets/circuit-setup-1.png" alt="Circuit Setup 1" width="400"/>
+  <p><em>Initial circuit setup for the project.</em></p>
+  <img src="assets/circuit-setup-2.png" alt="Circuit Setup 2" width="400"/>
+  <p><em>Alternative circuit setup.</em></p>
+  <img src="assets/terminal-output.png" alt="Terminal Output" width="600"/>
+  <p><em>Example terminal output from the emulated ESP32.</em></p>
 
-# ESP32 Emulation with QEMU & ESP-IDF
+  <h1 align="center">ESP32 Emulation with QEMU & ESP-IDF</h1>
+  <p align="center">
+    A project demonstrating a complete ESP32 emulation environment from scratch using QEMU and the ESP-IDF.
+    <br />
+    <a href="https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2/blob/master/README.md"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2/issues">Request Feature</a>
+  </p>
+</div>
 
-This document outlines the process of setting up an ESP32 emulation environment using QEMU and demonstrating two applications, as per the OSHW Screening Task.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-![circuit-setup-1.png](assets/circuit-setup-1.png)
-![circuit-setup-2.png](assets/circuit-setup-2.png)
-![terminal-output.png](assets/terminal-output.png)
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## 1. Overview
+This project demonstrates how to set up a complete ESP32 emulation environment from scratch using QEMU and the ESP-IDF. It includes two example applications: a simulated temperature sensor and an application that blinks an LED and reads from a (not emulated) DHT sensor.
 
-*   **Operating System**: Linux
+The primary goal of this project is to create a virtual testing environment for ESP32 applications, which can be used for automated testing and development without the need for physical hardware.
 
-## 2. Setup Steps
+For a detailed, step-by-step guide to this project, including explanations of each step, the libraries installed, and the importance of the project, please see the `instructions.md` file.
 
-This section details the commands used to set up the environment, build, and run the applications.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### 2.1. Environment Setup
+### Built With
 
-It is assumed that you have already cloned the project repository.
+*   [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/)
+*   [QEMU](https://www.qemu.org/)
+*   [C](https://en.wikipedia.org/wiki/C_(programming_language))
+*   [CMake](https://cmake.org/)
 
-1.  **Install ESP-IDF**: Follow the official ESP-IDF Get Started Guide to install the toolchain and dependencies.
-    *   [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-2.  **Set up ESP-IDF environment**: Before running any `idf.py` commands, you must source the `export.sh` script to set up the necessary environment variables.
-    ```bash
-    . /path/to/your/esp-idf/export.sh
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+*   **ESP-IDF**: The ESP-IDF (Espressif IoT Development Framework) is required to build the applications. Please follow the official [ESP-IDF Get Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html) to install the toolchain and dependencies.
+
+### Installation
+
+1.  **Clone the repo**
+    ```sh
+    git clone https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2.git
+    ```
+2.  **Install QEMU**
+    This project requires a custom version of QEMU that supports ESP32 emulation. The recommended way to install this is using the ESP-IDF's built-in tools:
+    ```sh
+    python $IDF_PATH/tools/idf_tools.py install qemu-xtensa
+    ```
+    Alternatively, you can build QEMU from source by following the instructions in `instructions.md`.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+To run the applications, you first need to modify `main/CMakeLists.txt` to select the desired application, and then use the `idf.py qemu monitor` command.
+
+Before running any `idf.py` commands, you must source the `export.sh` script from your ESP-IDF installation directory:
+```bash
+. /path/to/your/esp-idf/export.sh
+```
+
+### Running the "Temperature Sensor Simulation"
+
+1.  **Configure `main/CMakeLists.txt`** to include only `temperature_sensor.c`:
+    ```cmake
+    idf_component_register(SRCS "temperature_sensor.c"
+                           INCLUDE_DIRS "."
+                           REQUIRES esp_driver_gpio freertos)
     ```
 
-### 2.2. Build and Run the Temperature Sensor Simulation
-
-1.  **Navigate to the project directory**:
+2.  **Build and run in QEMU:**
     ```bash
-    cd /path/to/your/project
+    . /path/to/your/esp-idf/export.sh && idf.py qemu monitor
     ```
 
-2.  **Set the target**:
-    ```bash
-    idf.py set-target esp32
-    ```
+### Running the "Blink and DHT Sensor Application"
 
-3.  **Build the application**:
-    ```bash
-    idf.py build
-    ```
-
-4.  **Run the application in QEMU**:
-    ```bash
-    qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
-    ```
-
-### 2.3. Build and Run the Blink and DHT Sensor Application
-
-1.  **Modify `main/CMakeLists.txt`**: To run the blink and DHT sensor application, you need to modify `main/CMakeLists.txt` to include `app_main.c` and exclude `temperature_sensor.c`.
+1.  **Configure `main/CMakeLists.txt`** to include `app_main.c` and `dht_driver.c`:
     ```cmake
     idf_component_register(SRCS "app_main.c" "dht_driver.c"
                            INCLUDE_DIRS "."
                            REQUIRES esp_driver_gpio freertos)
     ```
 
-2.  **Build the application**:
+2.  **Build and run in QEMU:**
     ```bash
-    idf.py build
+    . /path/to/your/esp-idf/export.sh && idf.py qemu monitor
     ```
+    *Note: The DHT sensor will fail to read, as it is not an emulated peripheral. This is expected behavior.*
 
-3.  **Run the application in QEMU**:
-    ```bash
-    qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
-    ```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## 3. QEMU Setup Guide
+<!-- ROADMAP -->
+## Roadmap
 
-This section provides a detailed guide on setting up and using QEMU for ESP32 emulation.
+- [x] Set up ESP-IDF and QEMU environment
+- [x] Run Temperature Sensor Simulation in QEMU
+- [x] Run Blink and DHT Sensor Application in QEMU
+- [ ] Add more complex examples
+- [ ] Implement automated testing using the QEMU environment
 
-### 3.1. Introduction to QEMU
+See the [open issues](https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2/issues) for a full list of proposed features (and known issues).
 
-QEMU (Quick Emulator) is a generic and open-source machine emulator and virtualizer. It can run operating systems and programs made for one machine (e.g., an ARM board) on a different machine (e.g., your own x86 PC). In this project, we use QEMU to emulate an ESP32 microcontroller, which allows us to develop and test ESP32 applications without needing physical hardware.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### 3.2. Building QEMU for ESP32
+<!-- CONTRIBUTING -->
+## Contributing
 
-The official QEMU does not support ESP32 emulation out of the box. We need to use a fork from Espressif that adds support for the Xtensa architecture used in the ESP32.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1.  **Clone the Espressif QEMU repository**:
-    ```bash
-    git clone https://github.com/espressif/qemu.git
-    cd qemu
-    ```
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-2.  **Configure the build for the Xtensa architecture**:
-    ```bash
-    ./configure --target-list=xtensa-softmmu
-    ```
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-3.  **Compile and install QEMU**:
-    ```bash
-    make -j$(nproc)
-    sudo make install
-    ```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### 3.3. Running an ESP32 Application in QEMU
+<!-- LICENSE -->
+## License
 
-Once you have built your ESP32 application using `idf.py build`, you will get a `.elf` file in the `build` directory. You can run this file in QEMU using the following command:
+Distributed under the MIT License. See `LICENSE` for more information.
 
-```bash
-qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
-```
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-*   `qemu-system-xtensa`: This is the QEMU emulator for the Xtensa architecture.
-*   `-nographic`: This option disables the graphical output and redirects the serial output to the console.
-*   `-machine esp32`: This option specifies that we want to emulate an ESP32 machine.
-*   `-drive file=build/blink.elf,if=mtd,format=raw`: This option loads the application binary (`blink.elf`) into the emulated flash memory.
+<!-- CONTACT -->
+## Contact
 
-## 4. Challenges & Fixes
+Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
 
-*   **`idf.py` command not found**:
-    *   **Challenge**: The `idf.py` command was not found in the shell's path.
-    *   **Fix**: This was resolved by sourcing the `export.sh` script from the ESP-IDF installation directory, which correctly sets up the environment variables.
+Project Link: [https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2](https://github.com/zruv/Arduino-Winter-Internship-2025-Submission-Task-2)
 
-*   **Duplicate `app_main` function**:
-    *   **Challenge**: The build failed due to a duplicate `app_main` function definition. Both `temperature_sensor.c` and `app_main.c` (originally `blink_example_main.c`) had this function.
-    *   **Fix**: The `main/CMakeLists.txt` file was modified to only include one of the main files at a time, allowing the user to switch between the two applications.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## 5. Reflection
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
 
-This setup provides a powerful environment for developing and testing ESP32 applications without the need for physical hardware. By using QEMU, we can automate the testing of student code submissions on a platform like Yaksh.
+*   [Espressif](https://www.espressif.com/)
+*   [QEMU](https://www.qemu.org/)
+*   [OSHW Community](https://www.oshwa.org/)
 
-The process would involve:
-1.  Receiving the student's code submission.
-2.  Compiling the code using `idf.py`.
-3.  Running the compiled `.elf` file in QEMU.
-4.  Capturing the console output from QEMU.
-5.  Comparing the output against a set of expected results to determine the correctness of the submission.
-
-This automated evaluation platform would significantly streamline the process of grading and providing feedback for embedded systems courses.
+<p align="right">(<a href="#top">back to top</a>)</p>
