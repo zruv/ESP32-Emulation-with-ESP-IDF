@@ -1,3 +1,3 @@
-idf_component_register(SRCS "app_main.c" "temperature_sensor.c" "dht_driver.c"
+idf_component_register(SRCS "temperature_sensor.c"
                        INCLUDE_DIRS "."
                        REQUIRES esp_driver_gpio freertos)

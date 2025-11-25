@@ -1,9 +1,9 @@
-Command: ninja flash
-[1mConfiguration Report               [0m
+Command: cmake -G Ninja -B /home/zeus/esp/blink/build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/zeus/.espressif/python_env/idf6.1_py3.10_env/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=False /home/zeus/esp/blink
+Configuration Report               
  ───────────────────────────────── 
    Parser Version: 1               
    Verbosity: default              
    Defaults policy: sdkconfig      
-  [32m [0m[32mStatus: Finished successfully[0m[32m [0m  
+   Status: Finished successfully   
                                    
  ───────────────────────────────── 

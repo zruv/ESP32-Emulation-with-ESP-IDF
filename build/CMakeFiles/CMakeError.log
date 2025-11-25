@@ -1,16 +1,16 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags:  
 
 The output was:
 1
-/home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cflags": No such file or directory
+/home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cflags": No such file or directory
 collect2: error: ld returned 1 exit status
 
 
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags: -c 
 
@@ -21,7 +21,7 @@ xtensa-esp-elf-gcc: error: @"/home/zeus/esp/blink/build/toolchain/cflags": linke
 
 
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags: -Aa 
 
@@ -31,7 +31,7 @@ The output was:
 
 
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags: -D__CLASSIC_C__ 
 
@@ -41,12 +41,12 @@ CMakeCCompilerId.c: In function 'main':
 CMakeCCompilerId.c:774:5: warning: old-style function definition [-Wold-style-definition]
   774 | int main(argc, argv) int argc; char *argv[];
       |     ^~~~
-/home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cflags": No such file or directory
+/home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cflags": No such file or directory
 collect2: error: ld returned 1 exit status
 
 
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
 
@@ -57,7 +57,7 @@ xtensa-esp-elf-gcc: error: unrecognized command-line option '-mcpu=cortex-m3'
 
 
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cflags"
 Id flags: -c;-I__does_not_exist__ 
 
@@ -68,18 +68,18 @@ xtensa-esp-elf-gcc: error: @"/home/zeus/esp/blink/build/toolchain/cflags": linke
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags:  
 
 The output was:
 1
-/home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cxxflags": No such file or directory
+/home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.2.0/../../../../xtensa-esp-elf/bin/ld: cannot find @"/home/zeus/esp/blink/build/toolchain/cxxflags": No such file or directory
 collect2: error: ld returned 1 exit status
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags: -c 
 
@@ -90,7 +90,7 @@ xtensa-esp-elf-g++: error: @"/home/zeus/esp/blink/build/toolchain/cxxflags": lin
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags: --c++ 
 
@@ -100,7 +100,7 @@ xtensa-esp-elf-g++: error: unrecognized command-line option '--c++'
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags: --ec++ 
 
@@ -110,7 +110,7 @@ xtensa-esp-elf-g++: error: unrecognized command-line option '--ec++'; did you me
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
 
@@ -121,7 +121,7 @@ xtensa-esp-elf-g++: error: unrecognized command-line option '-mcpu=cortex-m3'
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /home/zeus/required_idf_tools_path/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
+Compiler: /home/zeus/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20250929/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ 
 Build flags: @"/home/zeus/esp/blink/build/toolchain/cxxflags"
 Id flags: -c;-I__does_not_exist__ 
 

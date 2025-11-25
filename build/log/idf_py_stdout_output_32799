@@ -1,0 +1,6 @@
+Command: ninja all
+[1/4] cd /home/zeus/esp/blink/build && /home/zeus/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/zeus/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/zeus/esp/blink/build/partition_table/partition-table.bin /home/zeus/esp/blink/build/blink.bin
+blink.bin binary size 0x21420 bytes. Smallest app partition is 0x100000 bytes. 0xdebe0 bytes (87%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] cd /home/zeus/esp/blink/build/bootloader && /home/zeus/.espressif/python_env/idf6.1_py3.10_env/bin/python /home/zeus/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/zeus/esp/blink/build/bootloader/bootloader.bin
+Bootloader binary size 0x66b0 bytes. 0x950 bytes (8%) free.

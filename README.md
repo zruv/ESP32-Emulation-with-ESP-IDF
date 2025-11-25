@@ -1,10 +1,13 @@
-![circuit-setup-1.png](assets/circuit-setup-1.png)
-![circuit-setup-2.png](assets/circuit-setup-2.png)
-![terminal-output.png](assets/terminal-output.png)
 
 # ESP32 Emulation with QEMU & ESP-IDF
 
 This document outlines the process of setting up an ESP32 emulation environment using QEMU and demonstrating two applications, as per the OSHW Screening Task.
+
+![circuit-setup-1.png](assets/circuit-setup-1.png)
+![circuit-setup-2.png](assets/circuit-setup-2.png)
+![terminal-output.png](assets/terminal-output.png)
+
+## 1. Overview
 
 *   **Operating System**: Linux
 
@@ -12,7 +15,7 @@ This document outlines the process of setting up an ESP32 emulation environment 
 
 This section details the commands used to set up the environment, build, and run the applications.
 
-### a. Environment Setup
+### 2.1. Environment Setup
 
 It is assumed that you have already cloned the project repository.
 
@@ -24,7 +27,7 @@ It is assumed that you have already cloned the project repository.
     . /path/to/your/esp-idf/export.sh
     ```
 
-### b. Build and Run the Temperature Sensor Simulation
+### 2.2. Build and Run the Temperature Sensor Simulation
 
 1.  **Navigate to the project directory**:
     ```bash
@@ -46,7 +49,7 @@ It is assumed that you have already cloned the project repository.
     qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
     ```
 
-### c. Build and Run the Blink and DHT Sensor Application
+### 2.3. Build and Run the Blink and DHT Sensor Application
 
 1.  **Modify `main/CMakeLists.txt`**: To run the blink and DHT sensor application, you need to modify `main/CMakeLists.txt` to include `app_main.c` and exclude `temperature_sensor.c`.
     ```cmake
@@ -65,7 +68,49 @@ It is assumed that you have already cloned the project repository.
     qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
     ```
 
-## 3. Challenges & Fixes
+## 3. QEMU Setup Guide
+
+This section provides a detailed guide on setting up and using QEMU for ESP32 emulation.
+
+### 3.1. Introduction to QEMU
+
+QEMU (Quick Emulator) is a generic and open-source machine emulator and virtualizer. It can run operating systems and programs made for one machine (e.g., an ARM board) on a different machine (e.g., your own x86 PC). In this project, we use QEMU to emulate an ESP32 microcontroller, which allows us to develop and test ESP32 applications without needing physical hardware.
+
+### 3.2. Building QEMU for ESP32
+
+The official QEMU does not support ESP32 emulation out of the box. We need to use a fork from Espressif that adds support for the Xtensa architecture used in the ESP32.
+
+1.  **Clone the Espressif QEMU repository**:
+    ```bash
+    git clone https://github.com/espressif/qemu.git
+    cd qemu
+    ```
+
+2.  **Configure the build for the Xtensa architecture**:
+    ```bash
+    ./configure --target-list=xtensa-softmmu
+    ```
+
+3.  **Compile and install QEMU**:
+    ```bash
+    make -j$(nproc)
+    sudo make install
+    ```
+
+### 3.3. Running an ESP32 Application in QEMU
+
+Once you have built your ESP32 application using `idf.py build`, you will get a `.elf` file in the `build` directory. You can run this file in QEMU using the following command:
+
+```bash
+qemu-system-xtensa -nographic -machine esp32 -drive file=build/blink.elf,if=mtd,format=raw
+```
+
+*   `qemu-system-xtensa`: This is the QEMU emulator for the Xtensa architecture.
+*   `-nographic`: This option disables the graphical output and redirects the serial output to the console.
+*   `-machine esp32`: This option specifies that we want to emulate an ESP32 machine.
+*   `-drive file=build/blink.elf,if=mtd,format=raw`: This option loads the application binary (`blink.elf`) into the emulated flash memory.
+
+## 4. Challenges & Fixes
 
 *   **`idf.py` command not found**:
     *   **Challenge**: The `idf.py` command was not found in the shell's path.
